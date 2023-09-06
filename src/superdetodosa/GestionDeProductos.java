@@ -237,7 +237,7 @@ public class GestionDeProductos extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(this, "Debe ingresar numeros en codigo, precio y stock");
             
         }
-
+        borrarFilas();
         
     }//GEN-LAST:event_jbGuardarActionPerformed
 
@@ -272,6 +272,8 @@ public class GestionDeProductos extends javax.swing.JInternalFrame {
 
     private void jbEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbEliminarActionPerformed
         Menu.productos.remove(prodEncontrado);
+        JOptionPane.showMessageDialog(this,"Producto eliminado");
+        borrarFilas();
     }//GEN-LAST:event_jbEliminarActionPerformed
 
 
@@ -292,4 +294,11 @@ public class GestionDeProductos extends javax.swing.JInternalFrame {
     private javax.swing.JTextField jtPrecio;
     private javax.swing.JTextField jtStock;
     // End of variables declaration//GEN-END:variables
+
+    private void borrarFilas() {
+        jtCodigo.setText("");
+        jtDescripcion.setText("");
+        jtPrecio.setText("");
+        jtStock.setText("");
+    }
 }
