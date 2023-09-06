@@ -5,8 +5,11 @@
  */
 package superdetodosa;
 
+import java.awt.Graphics;
+import java.awt.Image;
 import superdetodosa.PorRubro;
 import java.util.TreeSet;
+import javax.swing.ImageIcon;
 import superdetodosa.modelo.Producto;
 
 /**
@@ -33,7 +36,13 @@ public static TreeSet<Producto> productos= new TreeSet<>();
 
         escritorio = new javax.swing.JDesktopPane();
         jLayeredPane1 = new javax.swing.JLayeredPane();
-        escritorio2 = new javax.swing.JDesktopPane();
+        ImageIcon icono= new ImageIcon(getClass().getResource("iconos/transparente.png"));
+        Image miImagen= icono.getImage();
+        escritorio2 = new javax.swing.escritorio2(){
+            public void paintComponent(Graphics g){
+                g.drawImage(miImagen,0,0, getWidth(), getHeight(),this);
+            }
+        };
         jMenuBar1 = new javax.swing.JMenuBar();
         jmAdministracion = new javax.swing.JMenu();
         jmiGestion = new javax.swing.JMenuItem();
@@ -81,11 +90,11 @@ public static TreeSet<Producto> productos= new TreeSet<>();
         escritorio2.setLayout(escritorio2Layout);
         escritorio2Layout.setHorizontalGroup(
             escritorio2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1193, Short.MAX_VALUE)
+            .addGap(0, 1166, Short.MAX_VALUE)
         );
         escritorio2Layout.setVerticalGroup(
             escritorio2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 670, Short.MAX_VALUE)
         );
 
         jmAdministracion.setText("Administracion");
@@ -146,7 +155,7 @@ public static TreeSet<Producto> productos= new TreeSet<>();
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(escritorio2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(33, 33, 33)
                 .addComponent(escritorio, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -157,8 +166,8 @@ public static TreeSet<Producto> productos= new TreeSet<>();
                 .addComponent(escritorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addComponent(escritorio2)
-                .addContainerGap())
+                .addComponent(escritorio2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         escritorio.getAccessibleContext().setAccessibleDescription("");
