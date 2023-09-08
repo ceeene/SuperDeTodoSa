@@ -109,8 +109,8 @@ public class PorPrecio extends javax.swing.JInternalFrame {
                 pMin = 0;
                 pMax = 0;
             } else {
-                pMin = Double.parseDouble(jtPrecio1.getText().trim());
-                pMax = Double.parseDouble(jtPrecio2.getText().trim());
+                pMin = Double.parseDouble(jtPrecio1.getText());
+                pMax = Double.parseDouble(jtPrecio2.getText());
             }
 
             for (Producto elem : Menu.productos) {
@@ -125,7 +125,7 @@ public class PorPrecio extends javax.swing.JInternalFrame {
                 }
             }
         } catch (NumberFormatException nfe) {
-            JOptionPane.showMessageDialog(this, "Datos incorrectos: deben ser numeros");
+            JOptionPane.showMessageDialog(this, "Debe ingresar solo numeros");
             borrarFilas();
             jtPrecio1.setText("");
             jtPrecio2.setText("");

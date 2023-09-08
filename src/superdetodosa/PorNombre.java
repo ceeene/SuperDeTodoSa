@@ -111,7 +111,7 @@ public class PorNombre extends javax.swing.JInternalFrame {
     private void jtNombreKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtNombreKeyReleased
         borrarFilas();
         for(Producto prod:Menu.productos){
-            if (prod.getDescripcion().toLowerCase().startsWith(jtNombre.getText())){
+            if (prod.getDescripcion().toLowerCase().startsWith(jtNombre.getText().toLowerCase())){
                 modelo.addRow(new Object[]{
                     prod.getCodigo(),
                     prod.getDescripcion(),
@@ -140,7 +140,11 @@ public class PorNombre extends javax.swing.JInternalFrame {
       
    }
    private void borrarFilas(){
-      
+      int filas=modelo.getRowCount()-1;
+       for(int f=filas;f>=0;f--){
+           modelo.removeRow(f);
+       }
+   } 
    }
-}
+
    
